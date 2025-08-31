@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>bin\$(Configuration)\Mods\mod</OutputPath>
   </PropertyGroup>
@@ -65,8 +65,16 @@
       <Private>False</Private>
     </Reference>
 #endif -->
-  </ItemGroup>
 
+<!--#if (IncludeGameAssetsReference)
+    
+#endif -->
+<!--#if (RunConfiglibAlongside)
+    <PackageReference Include="VSImGui_DebugTools" Version="1.1.0" />
+#endif -->
+	</ItemGroup>
+	
+		  
 <ItemGroup>
   <Content Include="modinfo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
